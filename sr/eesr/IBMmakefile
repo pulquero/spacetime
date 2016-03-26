@@ -1,0 +1,16 @@
+# Makefile for IBM nmake.exe (VisualAge)
+
+VERSION_STRING = "EESR Copyright (C) 2000-2001 Mark Hale"
+CFLAGS = /Ss /V$(VERSION_STRING) /Gd /Ge- /Gn+ /G5 /Gs /Gf /Ms /O+ /Ol
+LIBFLAGS = /nodebug /packcode /packdata /optfunc /nod
+
+LIBS = os2386.lib ..\..\runtime\eert.lib opengl.lib srel.lib
+
+all: eesr.dll
+
+eesr.dll: eesr.obj ..\srel\srel.lib
+    ilink $(LIBFLAGS) /DLL ..\srel\ eesr.def $(LIBS) eesr.obj
+    implib eesr.lib eesr.dll
+
+eesr.obj: eesr.c eesr.h _eesr.h texture.c texture.h
+

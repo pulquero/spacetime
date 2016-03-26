@@ -1,0 +1,29 @@
+
+;-------------------------------------
+; EESR module definition file
+;-------------------------------------
+
+LIBRARY eesr INITINSTANCE TERMINSTANCE
+DESCRIPTION 'EESR Copyright (C) 2000-2001 Mark Hale'
+PROTMODE
+DATA MULTIPLE NONSHARED LOADONCALL
+EXPORTS
+   eesrSpeed
+   eesrLoop
+
+   eesrInit
+   eesrResize
+   eesrDrawGeometry
+   eesrSetRestFrame
+   eesrSetMovingFrame
+   eesrSetTime
+   eesrGetTime
+   eesrDrawWorld
+   eesrDrawObject
+   eesrSetObject
+   eesrDrawLattice
+   eesrDrawCar
+   eesrDrawAeroplane
+   eesrDrawSphere
+
+

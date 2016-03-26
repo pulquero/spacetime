@@ -1,0 +1,19 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "EinsteinExplorer-SR.h"
+
+DLGTEMPLATE IDD_DETAIL LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Detail Control", IDD_DETAIL, 60, 60, 115, 65, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 10, 5, 40, 14
+        PUSHBUTTON      "Cancel", DID_CANCEL, 65, 5, 40, 14
+        LTEXT           "Enter a value (0 to 1):", IDT_DETAIL_TEXT,
+                        11, 47, 93, 10, DT_VCENTER | NOT WS_GROUP
+        ENTRYFIELD      "", IDE_DETAIL_FIELD, 33, 32, 49, 10,
+                        ES_RIGHT | ES_MARGIN | WS_GROUP
+    END
+END
+

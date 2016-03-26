@@ -1,0 +1,62 @@
+
+;-------------------------------------
+; SREL module definition file
+;-------------------------------------
+
+LIBRARY srel INITINSTANCE TERMINSTANCE
+DESCRIPTION 'SREL Copyright (C) 2000-2001 Mark Hale'
+PROTMODE
+DATA MULTIPLE NONSHARED LOADONCALL
+EXPORTS
+   srelDetail
+   srelGetError
+   srelDoppler
+   srelVelocityf
+   srelVelocityfv
+   srelVelocityFunc
+   srelVelocityTransform
+   srelLocalTime
+
+   srelVertexTime3f
+   srelVertexTime3fv
+   srelVertexTime3d
+   srelVertexTime3dv
+
+   srelBegin
+   srelEnd
+
+   srelVertex2f
+   srelVertex2fv
+   srelVertex2d
+   srelVertex2dv
+   srelVertex3f
+   srelVertex3fv
+   srelVertex3d
+   srelVertex3dv
+   srelVertex4f
+   srelVertex4fv
+   srelVertex4d
+   srelVertex4dv
+
+   srelNormal3f
+   srelNormal3fv
+   srelNormal3d
+   srelNormal3dv
+
+   srelTexCoord1f
+   srelTexCoord1fv
+   srelTexCoord1d
+   srelTexCoord1dv
+   srelTexCoord2f
+   srelTexCoord2fv
+   srelTexCoord2d
+   srelTexCoord2dv
+
+   srelColor3f
+   srelColor3fv
+   srelColor4f
+   srelColor4fv
+
+   srelMaterialfv
+
+

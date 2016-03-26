@@ -1,0 +1,16 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "EinsteinExplorer-SR.h"
+
+DLGTEMPLATE IDD_TIM LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Time Control", IDD_TIM, -80, -50, 69, 81, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 15, 5, 40, 14
+        PUSHBUTTON      "+", IDP_TIM_INC, 25, 62, 20, 14
+        PUSHBUTTON      "-", IDP_TIM_DEC, 25, 42, 20, 14
+        AUTOCHECKBOX    "x10 Scale", IDC_TIM_SCALE, 10, 26, 53, 10
+    END
+END

@@ -1,0 +1,7 @@
+CC = icc
+LIBS = glut.lib opengl.lib srel.lib
+OBJECTS = main.obj street_data.obj render.obj
+CFLAGS = /Ss /Ms /O
+
+street.exe: $(OBJECTS)
+	ilink /pmtype:pm /o:street.exe $(LIBS) $(OBJECTS)

@@ -1,0 +1,38 @@
+:Base einsteinexplorer-sr.hlp
+:Title Help for Einstein Explorer - SR
+1 Introduction
+2 Help for Einstein Explorer - SR=INTRODUCTION
+1 Menus
+2 Control Menu
+3 Overview=CONTROL
+3 Translation Control=TRANSLATION
+3 X Increment Button=TRA_XINC
+3 X Decrement Button=TRA_XDEC
+3 Y Increment Button=TRA_YINC
+3 Y Decrement Button=TRA_YDEC
+3 Z Increment Button=TRA_ZINC
+3 Z Decrement Button=TRA_ZDEC
+3 Scale Check Box=TRA_SCALE
+3 Rotation Control=ROTATION
+3 Angle Slider Bar=ROT_ANGLE
+3 X Slider Bar=ROT_X
+3 Y Slider Bar=ROT_Y
+3 Z Slider Bar=ROT_Z
+3 Time Control=TIME
+3 Time Increment Button=TIM_INC
+3 Time Decrement Button=TIM_DEC
+3 Scale Check Box=TIM_SCALE
+3 Speed Control=SPEED
+3 Speed Slider Bar=SPE_BAR
+2 Options Menu
+3 Overview=OPTIONS
+3 Frame=FRAME
+3 Object=OBJECT
+3 Doppler=DOPPLER
+3 Freeze=FREEZE
+3 Loop=LOOP
+2 Graphics Menu
+3 Fog=FOG
+3 Texture=TEXTURE
+3 Wireframe=WIREFRAME
+

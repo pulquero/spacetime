@@ -1,0 +1,172 @@
+/**
+*   Einstein Explorer - SR (OS/2 version)
+*   Copyright (C) 2000  Mark Hale (mark.hale@physics.org)
+*
+*   This program is free software; you can redistribute it and/or modify
+*   it under the terms of the GNU General Public License as published by
+*   the Free Software Foundation; either version 2 of the License, or
+*   (at your option) any later version.
+*
+*   This program is distributed in the hope that it will be useful,
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*   GNU General Public License for more details.
+*
+*   You should have received a copy of the GNU General Public License
+*   along with this program; if not, write to the Free Software
+*   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+
+
+
+#include <os2.h>
+#include "EinsteinExplorer-SR.h"
+
+/*------*/
+/* Icon */
+/*------*/
+ICON IDW_FRAME_WINDOW EinsteinExplorer-SR.ico
+
+/*------*/
+/* Menu */
+/*------*/
+MENU IDW_FRAME_WINDOW
+BEGIN
+   SUBMENU "~Control", IDM_CTRL
+   BEGIN
+      MENUITEM "~Translate...", IDM_CTRL_TRA
+      MENUITEM "~Rotate...", IDM_CTRL_ROT
+      MENUITEM "T~ime...", IDM_CTRL_TIM
+      MENUITEM "~Speed...", IDM_CTRL_SPE
+   END
+   SUBMENU "~Options", IDM_OPT
+   BEGIN
+      SUBMENU "~Frame", IDM_OPT_FRAME
+      BEGIN
+         MENUITEM "~World", IDM_FR_WORLD, , MIA_CHECKED
+         MENUITEM "~Object", IDM_FR_OBJECT
+      END
+      SUBMENU "~Object", IDM_OPT_OBJ
+      BEGIN
+         MENUITEM "~Lattice", IDM_OBJ_LATTICE, , MIA_CHECKED
+         MENUITEM "~Car", IDM_OBJ_CAR
+         MENUITEM "~Aeroplane", IDM_OBJ_PLANE
+         MENUITEM "~Sphere", IDM_OBJ_SPHERE
+#ifdef HAVE_LIB3DS
+         MENUITEM "Load ~3DS...", IDM_OBJ_3DS
+#endif
+      END
+      MENUITEM "~Doppler\tCtrl+D", IDM_OPT_DOPPLER, , MIA_CHECKED
+      MENUITEM "Free~ze\tCtrl+F", IDM_OPT_FREEZE, , MIA_CHECKED
+      MENUITEM "~Loop\tCtrl+L", IDM_OPT_LOOP
+   END
+   SUBMENU "~Graphics", IDM_GRAPH
+   BEGIN
+      MENUITEM "~Detail...", IDM_GRAPH_DETAIL
+      MENUITEM "Fo~g\tCtrl+G", IDM_GRAPH_FOG
+      MENUITEM "~Texture\tCtrl+T", IDM_GRAPH_TEX
+      MENUITEM "~Wireframe\tCtrl+W", IDM_GRAPH_WIRE
+   END
+   SUBMENU "~Help", IDM_HELP, MIS_HELP
+   BEGIN
+      MENUITEM "Help ~index", IDM_HELP_INDEX
+      MENUITEM "~General help", IDM_HELP_GEN
+      MENUITEM "~Using help", IDM_HELP_USING
+      MENUITEM SEPARATOR
+      MENUITEM "~Product information", IDM_HELP_ABOUT
+   END
+END
+
+/*--------------*/
+/* Accelerators */
+/*--------------*/
+ACCELTABLE IDW_FRAME_WINDOW
+BEGIN
+   "d",   IDM_OPT_DOPPLER,  AF_CONTROL
+   "f",   IDM_OPT_FREEZE,   AF_CONTROL
+   "g",   IDM_GRAPH_FOG,    AF_CONTROL
+   "l",   IDM_OPT_LOOP,     AF_CONTROL
+   "t",   IDM_GRAPH_TEX,    AF_CONTROL
+   "w",   IDM_GRAPH_WIRE,   AF_CONTROL
+END
+
+/*---------*/
+/* Dialogs */
+/*---------*/
+RCINCLUDE Translate.dlg
+RCINCLUDE Rotate.dlg
+RCINCLUDE Time.dlg
+RCINCLUDE Speed.dlg
+RCINCLUDE Detail.dlg
+RCINCLUDE ProdInfo.dlg
+
+/*------*/
+/* Help */
+/*------*/
+HELPTABLE IDH_MAIN_HELPTABLE
+BEGIN
+   HELPITEM IDW_FRAME_WINDOW, IDH_SUBTABLE_FRAME, 100
+   HELPITEM IDD_TRA,    IDH_SUBTABLE_TRA,    210
+   HELPITEM IDD_ROT,    IDH_SUBTABLE_ROT,    220
+   HELPITEM IDD_TIM,    IDH_SUBTABLE_TIM,    230
+   HELPITEM IDD_SPE,    IDH_SUBTABLE_SPE,    240
+   HELPITEM IDD_DETAIL, IDH_SUBTABLE_DETAIL, 410
+END
+
+HELPSUBTABLE IDH_SUBTABLE_FRAME
+BEGIN
+   HELPSUBITEM IDM_CTRL,         200
+   HELPSUBITEM IDM_CTRL_TRA,     210
+   HELPSUBITEM IDM_CTRL_ROT,     220
+   HELPSUBITEM IDM_CTRL_TIM,     230
+   HELPSUBITEM IDM_CTRL_SPE,     240
+   HELPSUBITEM IDM_OPT,          300
+   HELPSUBITEM IDM_OPT_FRAME,    310
+   HELPSUBITEM IDM_OPT_OBJ,      320
+   HELPSUBITEM IDM_OPT_DOPPLER,  330
+   HELPSUBITEM IDM_OPT_FREEZE,   340
+   HELPSUBITEM IDM_OPT_LOOP,     350
+   HELPSUBITEM IDM_GRAPH,        400
+   HELPSUBITEM IDM_GRAPH_DETAIL, 410
+   HELPSUBITEM IDM_GRAPH_FOG,    420
+   HELPSUBITEM IDM_GRAPH_TEX,    430
+   HELPSUBITEM IDM_GRAPH_WIRE,   440
+END
+
+HELPSUBTABLE IDH_SUBTABLE_TRA
+BEGIN
+   HELPSUBITEM IDP_TRA_INCX,  211
+   HELPSUBITEM IDP_TRA_DECX,  212
+   HELPSUBITEM IDP_TRA_INCY,  213
+   HELPSUBITEM IDP_TRA_DECY,  214
+   HELPSUBITEM IDP_TRA_INCZ,  215
+   HELPSUBITEM IDP_TRA_DECZ,  216
+   HELPSUBITEM IDC_TRA_SCALE, 217
+END
+
+HELPSUBTABLE IDH_SUBTABLE_ROT
+BEGIN
+   HELPSUBITEM IDC_ROT_ANGLE, 221
+   HELPSUBITEM IDS_ROT_X,     222
+   HELPSUBITEM IDS_ROT_Y,     223
+   HELPSUBITEM IDS_ROT_Z,     224
+END
+
+HELPSUBTABLE IDH_SUBTABLE_TIM
+BEGIN
+   HELPSUBITEM IDP_TIM_INC,   231
+   HELPSUBITEM IDP_TIM_DEC,   232
+   HELPSUBITEM IDC_TIM_SCALE, 233
+END
+
+HELPSUBTABLE IDH_SUBTABLE_SPE
+BEGIN
+   HELPSUBITEM IDS_SPE_BAR, 241
+END
+
+HELPSUBTABLE IDH_SUBTABLE_DETAIL
+BEGIN
+   HELPSUBITEM IDE_DETAIL_FIELD, 411
+END
+
+

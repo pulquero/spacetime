@@ -1,0 +1,20 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "EinsteinExplorer-SR.h"
+
+DLGTEMPLATE IDD_TRA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Translation Control", IDD_TRA, -153, 50, 142, 115, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 49, 5, 40, 14
+        PUSHBUTTON      "+ X", IDP_TRA_INCX, 106, 68, 30, 14
+        PUSHBUTTON      "- X", IDP_TRA_DECX, 6, 68, 30, 14
+        PUSHBUTTON      "+ Y", IDP_TRA_INCY, 54, 95, 30, 14
+        PUSHBUTTON      "- Y", IDP_TRA_DECY, 54, 41, 30, 14
+        PUSHBUTTON      "- Z", IDP_TRA_DECZ, 41, 61, 30, 14
+        PUSHBUTTON      "+ Z", IDP_TRA_INCZ, 71, 75, 30, 14
+        AUTOCHECKBOX    "x10 Scale", IDC_TRA_SCALE, 43, 24, 53, 10
+    END
+END

@@ -1,0 +1,27 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "EinsteinExplorer-SR.h"
+
+DLGTEMPLATE IDD_ROT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Rotation Control", IDD_ROT, 250, 0, 89, 131, WS_VISIBLE,
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 24, 5, 40, 14
+        CONTROL         "Angle", IDC_ROT_ANGLE, 13, 84, 62, 42,
+                        WC_CIRCULARSLIDER, 8 | WS_TABSTOP | WS_VISIBLE | CSS_360 | CSS_POINTSELECT
+        SLIDER          IDS_ROT_X, 0, 36, 32, 44, SLS_VERTICAL |
+                        SLS_SNAPTOINCREMENT | WS_GROUP
+                        CTLDATA 12, 0, 10, 0, 0, 0
+        SLIDER          IDS_ROT_Y, 28, 36, 32, 44, SLS_VERTICAL |
+                        SLS_SNAPTOINCREMENT | WS_GROUP
+                        CTLDATA 12, 0, 10, 0, 0, 0
+        SLIDER          IDS_ROT_Z, 57, 36, 32, 44, SLS_VERTICAL |
+                        SLS_SNAPTOINCREMENT | WS_GROUP
+                        CTLDATA 12, 0, 10, 0, 0, 0
+        LTEXT           "X", IDT_ROT_TEXTX, 13, 25, 7, 8
+        LTEXT           "Y", IDT_ROT_TEXTY, 41, 25, 7, 8
+        LTEXT           "Z", IDT_ROT_TEXTZ, 70, 25, 7, 8
+    END
+END

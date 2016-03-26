@@ -1,0 +1,60 @@
+SCRIPT of the automated demo
+----------------------------
+
+[Logo is shown: Special Relativity? Spacetime? Choose what you want to
+show. Credits: "libsrel (c) 2000, 2001 Mark Hale", "Demo by Mark Hale
+and Bruno Barberi Gnecco", emails. After a couple seconds, the title is
+severely distorted by relativity, and the image fades away.]
+
+[A street, with some buildings, not too high (no more than 5 floors).
+The street is short, just connecting two other orthogonal streets
+(avoiding horizon problems). On the street, a red car is going in
+one direction, and a blue car in the other direction. A man (if
+possible, looking like Einstein) is waiting to cross the road, 
+just beside a street sign. There are a few street signs on the 
+street. A small plane (or large bird?) is flying above the cars.]
+
+[Everything is paused. Camera is in the beginning of the street and
+from this point of view can see all the objects.]
+
+Legend: This is a common scene which you find everyday.
+
+[cars start to move, man to walk street, bird flies.]
+[Loud sound. A thump? Everything pauses again.]
+
+Legend [big]: But not TODAY.
+
+[View is again the same as the one at the beginning. Doppler is set to 
+off.]
+
+Legend: Today light speed will be changed: it will be only 100km/h.
+Legend: The blue car is moving at 60km/h, and so is the red car. The
+   man is walking at 10 km/h. And our bird is a very special one,
+   because it's flying at 90 km/h.
+
+[Scene changes to relativistic, and objects start to move, just like
+in the previous shot (camera is still wrt the street). A display with our
+speed, in relation to the street is present from now on.]
+
+Legend: Quite different, ahn? Let's see the same scene from the red
+   car.
+[Camera instaneously moves to inside the red car. Animation continues
+for a while.]
+
+Legend: But our walking man does not see the street like this!
+[Same scene, viewed from Einstein's point of view.]
+
+Legend: And our bird sees something else.
+[Same scene, viewed from the bird's point of view.]
+
+Legend: Yet, this is not what they are really seeing. Relativity 
+   affects light's frequency!
+[Same scenes, rendered one after another, with doppler now]
+
+Legend: Now let's suppose we are inside the blue car, which is stopped,
+   and accelerate.
+
+[Scene is reseted to default, and blue car starts to accelerate. 
+Perhaps a non-linear acceleration would be better, fast at first,
+slower later.]
+

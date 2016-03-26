@@ -1,0 +1,314 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MAINMENU MENU DISCARDABLE
+BEGIN
+    POPUP "&Control"
+    BEGIN
+        MENUITEM "&Translate",                  IDM_CTRL_TRA
+        MENUITEM "&Rotate",                     IDM_CTRL_ROT
+        MENUITEM "T&ime",                       IDM_CTRL_TIM
+        MENUITEM "&Speed",                      IDM_CTRL_SPE
+    END
+    POPUP "&Options"
+    BEGIN
+        POPUP "&Frame"
+        BEGIN
+            MENUITEM "&World",                      IDM_FR_WORLD, CHECKED
+            MENUITEM "&Object",                     IDM_FR_OBJECT
+        END
+        POPUP "&Object"
+        BEGIN
+            MENUITEM "&Lattice",                    IDM_OBJ_LATTICE, CHECKED
+            MENUITEM "&Car",                        IDM_OBJ_CAR
+            MENUITEM "&Aeroplane",                  IDM_OBJ_PLANE
+            MENUITEM "&Sphere",                     IDM_OBJ_SPHERE
+        END
+        MENUITEM "&Doppler",                    IDM_OPT_DOPPLER, CHECKED
+        MENUITEM "&Freeze\tCtrl+F",             IDM_OPT_FREEZE, CHECKED
+        MENUITEM "&Loop\tCtrl+L",               IDM_OPT_LOOP
+    END
+    POPUP "&Graphics"
+    BEGIN
+        MENUITEM "Fo&g\tCtrl+G",                IDM_GRAPH_FOG
+        MENUITEM "&Texture\tCtrl+T",            IDM_GRAPH_TEX
+        MENUITEM "&Wireframe\tCtrl+W",          IDM_GRAPH_WIRE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Contents\tF1",               IDM_HELP_CONTENTS, HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About",                      IDM_HELP_ABOUT
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+TRANSLATEDLG DIALOG DISCARDABLE  0, 0, 119, 130
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Translation Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "- X",IDP_TRA_DECX,21,32,14,14
+    PUSHBUTTON      "+ X",IDP_TRA_INCX,83,32,16,14
+    PUSHBUTTON      "- Y",IDP_TRA_DECY,53,58,14,14
+    PUSHBUTTON      "+ Y",IDP_TRA_INCY,52,7,16,14
+    PUSHBUTTON      "- Z",IDP_TRA_DECZ,45,38,14,14
+    PUSHBUTTON      "+ Z",IDP_TRA_INCZ,59,25,16,14
+    CONTROL         "x10 Scale",IDC_TRA_SCALE,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,36,85,47,10
+    DEFPUSHBUTTON   "OK",IDOK,35,109,50,14
+END
+
+SPEEDDLG DIALOG DISCARDABLE  0, 0, 167, 55
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION |
+    WS_SYSMENU
+CAPTION "Speed Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Slider1",IDS_SPE_BAR,"msctls_trackbar32",TBS_AUTOTICKS |
+                    WS_TABSTOP,7,7,153,18
+    DEFPUSHBUTTON   "OK",IDOK,59,34,50,14
+END
+
+PRODINFODLG DIALOG DISCARDABLE  0, 0, 118, 100
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION |
+    WS_SYSMENU
+CAPTION "Product Information"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,34,79,50,14
+    CTEXT           "Einstein Explorer - SR",IDT_PRODINFO_TITLE,24,7,69,8,
+                    NOT WS_GROUP
+    CTEXT           "Written by Mark Hale",IDT_PRODINFO_AUTHOR,24,41,68,8,
+                    NOT WS_GROUP
+    CTEXT           "mark.hale@physics.org",IDT_PRODINFO_EMAIL,21,54,74,8,
+                    NOT WS_GROUP
+    CTEXT           "Version 1.2",IDT_PRODINFO_VERSION,40,20,36,8,NOT
+                    WS_GROUP
+END
+
+TIMEDLG DIALOG DISCARDABLE  0, 0, 74, 98
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION |
+    WS_SYSMENU
+CAPTION "Time Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      " + ",IDP_TIM_INC,30,7,14,14
+    PUSHBUTTON      " - ",IDP_TIM_DEC,30,31,14,14
+    CONTROL         "x10 Scale",IDC_TIM_SCALE,"Button",BS_AUTOCHECKBOX |
+                    WS_TABSTOP,13,54,47,10
+    DEFPUSHBUTTON   "OK",IDOK,12,77,50,14
+END
+
+ROTATEDLG DIALOG DISCARDABLE  0, 0, 154, 161
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION |
+    WS_SYSMENU
+CAPTION "Rotation Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Slider4",IDC_ROT_ANGLE,"msctls_trackbar32",TBS_NOTICKS |
+                    WS_TABSTOP,7,13,140,20
+    CONTROL         "Slider1",IDS_ROT_X,"msctls_trackbar32",TBS_AUTOTICKS |
+                    TBS_VERT | WS_TABSTOP,27,57,20,60
+    CONTROL         "Slider2",IDS_ROT_Y,"msctls_trackbar32",TBS_AUTOTICKS |
+                    TBS_VERT | WS_TABSTOP,68,57,20,60
+    CONTROL         "Slider3",IDS_ROT_Z,"msctls_trackbar32",TBS_AUTOTICKS |
+                    TBS_VERT | WS_TABSTOP,107,57,20,60
+    DEFPUSHBUTTON   "OK",IDOK,52,140,50,14
+    LTEXT           "X",IDT_ROT_X,33,122,8,8,NOT WS_GROUP
+    LTEXT           "Y",IDT_ROT_Y,74,122,8,8,NOT WS_GROUP
+    LTEXT           "Z",IDT_ROT_Z,113,122,8,8,NOT WS_GROUP
+    LTEXT           "Angle",IDT_ROT_ANGLE,67,35,19,8,NOT WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+ACCELERATOR ACCELERATORS DISCARDABLE
+BEGIN
+    "D",            IDM_OPT_DOPPLER,        VIRTKEY, CONTROL, NOINVERT
+    "F",            IDM_OPT_FREEZE,         VIRTKEY, CONTROL, NOINVERT
+    "G",            IDM_GRAPH_FOG,          VIRTKEY, CONTROL, NOINVERT
+    "L",            IDM_OPT_LOOP,           VIRTKEY, CONTROL, NOINVERT
+    "T",            IDM_GRAPH_TEX,          VIRTKEY, CONTROL, NOINVERT
+    "W",            IDM_GRAPH_WIRE,         VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          IDM_HELP_CONTENTS,      VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE
+BEGIN
+    "TRANSLATEDLG", DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 112
+        VERTGUIDE, 28
+        VERTGUIDE, 91
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    "SPEEDDLG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    "PRODINFODLG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 111
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    "TIMEDLG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 67
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+
+    "ROTATEDLG", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,0,0
+ PRODUCTVERSION 1,2,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904b0"
+        BEGIN
+            VALUE "CompanyName", "Mark Hale\0"
+            VALUE "FileDescription", "einsteinexplorer-sr\0"
+            VALUE "FileVersion", "1, 2, 0, 0\0"
+            VALUE "InternalName", "einsteinexplorer-sr\0"
+            VALUE "LegalCopyright", "Copyright © 1997\0"
+            VALUE "OriginalFilename", "einsteinexplorer-sr.exe\0"
+            VALUE "ProductName", "Einstein Explorer - SR\0"
+            VALUE "ProductVersion", "1, 2, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x809, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+APPICON                    ICON    DISCARDABLE     "EinsteinExplorer-SR.ico"
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED

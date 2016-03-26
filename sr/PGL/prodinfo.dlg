@@ -1,0 +1,21 @@
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+#include "EinsteinExplorer-SR.h"
+
+DLGTEMPLATE IDD_PRODINFO LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Product Information", IDD_PRODINFO, 30, 14, 130, 109,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        CTEXT           "Einstein Explorer - SR", IDT_PRODINFO_TITLE, 19, 68,
+                        91, 8, DT_VCENTER | NOT WS_GROUP
+        CTEXT           "Written by Mark Hale", IDT_PRODINFO_AUTHOR, 20, 42,
+                        88, 8, DT_VCENTER | NOT WS_GROUP
+        DEFPUSHBUTTON   "OK", DID_OK, 44, 5, 40, 14
+        CTEXT           "(mark.hale@physics.org)", IDT_PRODINFO_EMAIL, 14,
+                        28, 100, 8, DT_VCENTER | NOT WS_GROUP
+        ICON            IDW_FRAME_WINDOW, IDI_PRODINFO_ICON, 54, 85, 20, 16
+        LTEXT           "Version 1.36", IDT_PRODINFO_VERSION, 41, 57, 50, 8
+    END
+END

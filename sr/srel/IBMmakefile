@@ -1,0 +1,16 @@
+# Makefile for IBM nmake.exe (VisualAge)
+
+VERSION_STRING = "SREL Copyright (C) 2000-2001 Mark Hale"
+CFLAGS = /Ss /V$(VERSION_STRING) /Gd /Ge- /Gn+ /G5 /Gs /Gf /Ms /O+ /Ol
+LIBFLAGS = /nodebug /packcode /packdata /optfunc /nod
+
+LIBS = ..\..\runtime\eert.lib opengl.lib
+
+all: srel.dll
+
+srel.dll: srel.obj
+    ilink $(LIBFLAGS) /DLL srel.def $(LIBS) srel.obj
+    implib srel.lib srel.dll
+
+srel.obj: srel.c srel.h _srel.h
+

@@ -1,0 +1,22 @@
+# Makefile for IBM nmake.exe (VisualAge)
+
+LIB3DS_DIR = \download\lib3ds-1.2.0
+VERSION_STRING = "Einstein Explorer - SR\nCopyright (C) 2000-2001 Mark Hale"
+CFLAGS = /Ss /V$(VERSION_STRING) /I$(LIB3DS_DIR) /Gd /Ge+ /Gn+ /Gf /Gi /Gs /G5 /Ms /O+ /Ol /DHAVE_LIB3DS
+LIBFLAGS = /nodebug /packcode /packdata /optfunc /nod
+
+TARGET = EinsteinExplorer-SR
+LIBS = os2386.lib ..\..\runtime\eert.lib opengl.lib lib3ds.lib srel.lib eesr.lib
+
+all: $(TARGET).exe
+
+$(TARGET).obj: $(TARGET).c $(TARGET).h
+
+$(TARGET).exe: $(TARGET).obj ..\srel\srel.lib ..\eesr\eesr.lib
+    ilink $(LIBFLAGS) /EXE ..\srel\ ..\eesr\ $(TARGET).def $(LIBS) $(TARGET).obj
+    rc -DHAVE_LIB3DS -p -x2 $(TARGET)
+
+clean:
+    del $(TARGET).exe $(TARGET).obj
+
+

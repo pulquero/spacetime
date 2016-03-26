@@ -1,0 +1,12 @@
+
+;-------------------------------------
+; EinsteinExplorer-SR module definition file
+;-------------------------------------
+
+NAME           EinsteinExplorer-SR  WINDOWAPI
+DESCRIPTION    'Einstein Explorer - SR (GLUT)'
+PROTMODE
+HEAPSIZE       512000
+STACKSIZE     1000000
+
+
